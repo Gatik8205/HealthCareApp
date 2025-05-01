@@ -1,9 +1,15 @@
 package com.example.first;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -19,6 +25,28 @@ public class HomeActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        SharedPreferences sharedprefereces=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+        String username=sharedprefereces.getString("username","").toString();
+        Toast.makeText(getApplicationContext(),"Welcome"+username,Toast.LENGTH_SHORT).show();
+
+        CardView exit=findViewById(R.id.cardExit);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor=sharedprefereces.edit();
+                editor.clear();
+                editor.apply();
+                startActivity(new Intent(HomeActivity.this,LoginActivity.class));
+            }
+        });
+        CardView findDoctor=findViewById(R.id.cardFindDoctor);
+        findDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,FindDoctorActivity.class));
+            }
         });
     }
 }
