@@ -26,7 +26,6 @@ public class HomeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         SharedPreferences sharedprefereces=getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String username=sharedprefereces.getString("username","").toString();
         Toast.makeText(getApplicationContext(),"Welcome"+username,Toast.LENGTH_SHORT).show();
@@ -46,6 +45,34 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this,FindDoctorActivity.class));
+            }
+        });
+        CardView labTest=findViewById(R.id.cardLabTest);
+        labTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,LabTestActivity.class));
+            }
+        });
+        CardView orderDetails=findViewById(R.id.cardOrderDetails);
+        orderDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,OrderDetailsActivity.class));
+            }
+        });
+        CardView buyMedicine=findViewById(R.id.cardBuyMedicine);
+        buyMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,BuyMedicineActivity.class));
+            }
+        });
+        CardView healthArticle=findViewById(R.id.cardHealthDoctor);
+        healthArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,HealthArticleActivity.class));
             }
         });
     }

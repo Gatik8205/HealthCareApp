@@ -95,6 +95,7 @@ public class BookAppointmentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Appointment Booked",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(BookAppointmentActivity.this, FindDoctorActivity.class));
             }
         });
     }

@@ -77,8 +77,8 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         HashMap<String,String> item;
         ArrayList list;
         SimpleAdapter sa;
-        tv = findViewById(R.id.textViewDDTitle);
-        btn = findViewById(R.id.buttonDDBack);
+        tv = findViewById(R.id.textViewLTTitle);
+        btn = findViewById(R.id.buttonLTBack);
         Intent it=getIntent();
         String title=it.getStringExtra("title");
         tv.setText(title);
@@ -116,7 +116,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
                 R.layout.multi_lines,
                 new String[]{"line1","line2","line3","line4","line5"},
                 new int[]{R.id.line_a,R.id.line_b,R.id.line_c,R.id.line_d,R.id.line_e});
-        ListView lst=findViewById(R.id.listViewDD);
+        ListView lst=findViewById(R.id.listViewLT);
         lst.setAdapter(sa);
 
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
