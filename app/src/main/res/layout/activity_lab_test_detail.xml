@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="628dp"
-        android:text="Deliver Location : PUNE"
+        android:text="Deliver Location : Guna"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"
         android:textStyle="bold"

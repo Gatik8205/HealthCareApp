@@ -30,6 +30,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLoginUsername" />
 
+    <ImageView
+        android:id="@+id/ivShowLoginPassword"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="80dp"
+        android:src="@drawable/ic_eye_closed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextLoginUsername" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
